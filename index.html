@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia e Descriptografia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    <div class="container">
+        <header>
+            <h1>Criptografia e Descriptografia</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </header>
+        <main>
+            <input type="file" id="fileInput" hidden>
+            <button class="btn" onclick="document.getElementById('fileInput').click()">Carregar Chave</button>
+            <textarea id="message" placeholder="Digite ou cole sua mensagem aqui..." aria-label="Área de texto para a mensagem"></textarea>
+            <button class="btn" onclick="encryptMessage()">Criptografar com Chave Carregada</button>
+            <button class="btn" onclick="generateAndEncrypt()">Gerar Nova Chave e Criptografar</button>
+            <button class="btn" onclick="decryptMessage()">Descriptografar</button>
+            <section>
+                <p id="output" aria-live="polite"></p>
+                <textarea id="encryptedMessage" readonly placeholder="Mensagem criptografada aparecerá aqui..."></textarea>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Criptografia e Descriptografia</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
